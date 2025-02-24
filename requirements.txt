@@ -1,0 +1,27 @@
+# Deep Learning Frameworks
+torch>=2.0.0
+torchaudio>=2.0.0
+tensorflow>=2.0.0
+tensorflow-hub>=0.12.0
+transformers>=4.30.0
+
+# Audio Processing
+librosa>=0.10.0
+
+# Data Manipulation
+numpy>=1.21.0
+pandas>=1.5.0
+scikit-learn>=1.0.0
+
+# Visualization
+matplotlib>=3.5.0
+seaborn>=0.12.0
+
+# Progress Bars
+tqdm>=4.65.0
+
+# Optional: CUDA support for PyTorch
+# Run: pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+# Optional: GPU support for TensorFlow
+# tensorflow-gpu>=2.0.0  # Only if using separate GPU package
