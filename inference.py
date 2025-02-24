@@ -261,7 +261,7 @@ class AudioInference:
         # Load YAMNet models
         for i in range(5):
             model = YAMNetFineTuner(num_classes=cfg.num_classes, cfg=cfg).to(self.device)
-            checkpoint = torch.load(f'models/best_yamnet_fold_{i}_model.pt', map_location=self.device, weights_only=False)
+            checkpoint = torch.load(f'models/best_yamnet_fold_{i}_model.pt', map_location=self.device)
             model.load_state_dict(checkpoint['model_state_dict'])
             model.eval()
             self.yamnet_models.append(model)
@@ -269,7 +269,7 @@ class AudioInference:
         # Load Wav2Vec2 models
         for i in range(5):
             model = Wav2Vec2FineTuner(num_classes=cfg.num_classes).to(self.device)
-            checkpoint = torch.load(f'models/best_wav2vec2_fold_{i}_model.pt', map_location=self.device, weights_only=False)
+            checkpoint = torch.load(f'models/best_wav2vec2_fold_{i}_model.pt', map_location=self.device)
             model.load_state_dict(checkpoint['model_state_dict'])
             model.eval()
             self.wav2vec2_models.append(model)
