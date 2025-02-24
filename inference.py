@@ -8,6 +8,11 @@ import tensorflow_hub as hub
 import tensorflow as tf
 from transformers import Wav2Vec2Model, Wav2Vec2Config
 
+# Register the problematic global to allow safe deserialization.
+import torch.serialization
+torch.serialization.add_safe_globals(["__path__._path"])
+
+
 class YAMNetDecoder:
     def __init__(self, cfg):
         self.cfg = cfg
